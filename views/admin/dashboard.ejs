@@ -1,0 +1,62 @@
+<!-- views/admin/dashboard.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <!-- Include Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow p-4">
+        <div class="container mx-auto">
+            <span class="font-bold text-xl">Admin Dashboard</span>
+            <a href="/admin/logout" class="float-right text-red-500">Logout</a>
+        </div>
+    </nav>
+    <div class="container mx-auto mt-8">
+        <h1 class="text-2xl font-bold mb-4">Welcome, Admin</h1>
+        <!-- Add content here -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-white p-4 shadow rounded">
+                <h2 class="text-xl font-semibold mb-2">Website Statistics</h2>
+                <!-- Statistics content -->
+                <ul>
+                    <li>Total Reports: <%= stats.totalReports %></li>
+                    <li>Total Connected Users: <%= stats.totalActiveSockets %></li>
+                    <li>Active Chat Rooms: <%= stats.totalChatRooms %></li>
+                    <li>Active Video Rooms: <%= stats.totalVideoRooms %></li>
+                </ul>
+            </div>
+            <div class="bg-white p-4 shadow rounded">
+                <h2 class="text-xl font-semibold mb-2">Recent Reports</h2>
+                <!-- Reports content -->
+                <table class="min-w-full leading-normal">
+                    <thead>
+                        <tr>
+                            <th class="px-4 py-2">Reporter IP</th>
+                            <th class="px-4 py-2">Reported IP</th>
+                            <th class="px-4 py-2">Type</th>
+                            <th class="px-4 py-2">Date</th>
+                            <th class="px-4 py-2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% reports.forEach(report => { %>
+                        <tr class="border-b">
+                            <td class="px-4 py-2"><%= report.reporterIp %></td>
+                            <td class="px-4 py-2"><%= report.reportedIp %></td>
+                            <td class="px-4 py-2"><%= report.chatRoom ? 'Chat' : 'Video' %></td>
+                            <td class="px-4 py-2"><%= report.timestamp.toLocaleString() %></td>
+                            <td class="px-4 py-2">
+                                <a href="/admin/reports/<%= report._id %>" class="text-blue-500">View</a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

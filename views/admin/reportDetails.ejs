@@ -1,0 +1,49 @@
+<!-- views/admin/reportDetails.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report Details</title>
+    <!-- Include Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow p-4">
+        <div class="container mx-auto">
+            <a href="/admin/dashboard" class="font-bold text-xl">Admin Dashboard</a>
+            <a href="/admin/logout" class="float-right text-red-500">Logout</a>
+        </div>
+    </nav>
+    <div class="container mx-auto mt-8">
+        <h1 class="text-2xl font-bold mb-4">Report Details</h1>
+        <div class="bg-white p-4 shadow rounded">
+            <p><strong>Reporter IP:</strong> <%= report.reporterIp %></p>
+            <p><strong>Reported IP:</strong> <%= report.reportedIp %></p>
+            <p><strong>Type:</strong> <%= report.chatRoom ? 'Chat' : 'Video' %></p>
+            <p><strong>Date:</strong> <%= report.timestamp.toLocaleString() %></p>
+            <% if (report.callDuration) { %>
+                <p><strong>Call Duration:</strong> <%= report.callDuration %> ms</p>
+            <% } %>
+            <% if (report.reportReason) { %>
+                <p><strong>Reason:</strong> <%= report.reportReason %></p>
+            <% } %>
+            <% if (report.chatTranscript && report.chatTranscript.length > 0) { %>
+                <h2 class="text-xl font-semibold mt-4">Chat Transcript</h2>
+                <ul class="list-disc pl-5">
+                    <% report.chatTranscript.forEach(msg => { %>
+                        <li><strong><%= msg.sender === report.reporterSocketId ? 'Reporter' : 'Reported' %>:</strong> <%= msg.message %></li>
+                    <% }) %>
+                </ul>
+            <% } %>
+            <div class="mt-4">
+                <form action="/admin/reports/<%= report._id %>/ban" method="POST" class="inline">
+                    <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Ban Reported IP</button>
+                </form>
+                <form action="/admin/reports/<%= report._id %>/delete" method="POST" class="inline ml-2">
+                    <button type="submit" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Delete Report</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

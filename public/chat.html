@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheevo Chat</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <h2><a href="/">CHEEVO</a></h2>
+            <p>Chat</p>
+            <button id="soundToggleBtn" class="sound-toggle" aria-label="Toggle Sound">🔇</button>
+             <button id="themeToggleBtn" class="theme-toggle" aria-label="Toggle Theme">⚫️️️</button>
+             <button id="reportBtn" class="report-btn hidden" aria-label="Report User">🚩</button>
+        </header>
+        
+        <div id="idleMessage" class="idle-message">Click "Find Stranger" to start searching</div>
+
+        <!-- Chat Box -->
+        <section id="chat-box" class="chat-box">
+            <div id="chat-messages" class="chat-messages">
+                <div id="typingIndicator" class="typing-indicator">Stranger is typing...</div>
+            </div>
+            <div class="chat-input-area">
+    <button id="nextChatBtn" class="next-chat-btn" aria-label="Find Next Stranger" disabled>Next</button>
+    <input type="text" id="messageInput" class="message-input" placeholder="Type a message..." aria-label="Type your message" disabled />
+    <button id="sendMessageBtn" class="send-message-btn" aria-label="Send Message" disabled>Send</button>
+</div>
+
+        </section>
+
+        <!-- Find Stranger Button -->
+        <button id="findStrangerBtn" class="find-stranger-btn">Find a Stranger to Chat</button>
+
+        <!-- Audio Elements for Sounds -->
+        <audio id="typingSound" src="sounds/typing.mp3" preload="auto"></audio>
+        <audio id="sentMessageSound" src="sounds/sent_message.mp3" preload="auto"></audio>
+        <audio id="receivedMessageSound" src="sounds/received_message.mp3" preload="auto"></audio>
+        <audio id="searchingSound" src="sounds/searching.mp3" preload="auto"></audio>
+        <audio id="connectedSound" src="sounds/connected.mp3" preload="auto"></audio>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="js/chat.js"></script>
+    </div>
+</body>
+</html>

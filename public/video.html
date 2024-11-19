@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheevo Video Chat</title>
+    <link rel="stylesheet" href="css/video-styles.css">
+</head>
+<body>
+    <div class="video-container">
+        <!-- Video Display Section -->
+        <section class="video-display">
+            <video id="strangerVideo" autoplay playsinline class="stranger-video"></video>
+            <video id="userVideo" autoplay playsinline muted class="user-video"></video>
+
+            <!-- Chatbox Section (Desktop) -->
+            <div id="chatBox" class="chat-box">
+                <!-- Collapse/Expand Button for Desktop -->
+                <button id="toggleChatSizeBtn" class="toggle-chat-size-btn">&#9660;</button>
+
+                <!-- Close Button for Desktop -->
+                <button id="closeChatBtn" class="close-chat-btn">&times;</button>
+
+                <div id="chatMessages" class="chat-messages"></div>
+                <div class="chat-input-area">
+                    <input type="text" id="chatInput" class="chat-input" placeholder="Type a message...">
+                    <button id="sendChatBtn" class="send-chat-btn">Send</button>
+                </div>
+            </div>
+
+            <!-- Chat Modal (Mobile) -->
+            <div id="chatModal" class="chat-modal">
+                <!-- Close Button for Mobile Modal -->
+                <button id="closeChatModalBtn" class="close-chat-modal-btn">&times;</button>
+
+                <div class="chat-messages"></div>
+                <div class="chat-input-area">
+                    <input type="text" class="chat-input" placeholder="Type a message...">
+                    <button class="send-chat-btn">Send</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Controls -->
+        <div class="video-controls">
+            <!-- video.html -->
+             <button id="reportBtn" class="report-btn hidden" aria-label="Report User">🚩</button>
+            <button id="nextBtn" class="next-video-btn" aria-label="Find Next Stranger">Find Stranger</button>
+            <button id="confirmSkipBtn" class="confirm-skip-btn" style="display: none;" aria-label="Confirm Skip">Sure?</button>
+            <!-- Chat Toggle Button for Mobile -->
+            <button id="chatToggleBtn" class="chat-toggle-btn" style="display: none;">Chat</button>
+            <span id="chatNotificationDot" class="notification-dot"></span>
+        </div>
+    </div>
+    
+    <div class="watermark">
+    <a href="/"><img src="assets/logo.png" alt="Cheevo Logo"></a>
+   </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/video.js"></script>
+</body>
+</html>

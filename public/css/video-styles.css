@@ -1,0 +1,517 @@
+/* video-styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Full-screen Body */
+body {
+    font-family: 'IBM Plex Mono', monospace;
+    background-color: #f0f2f5;
+    color: #333;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Container Styling */
+.video-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    overflow: auto;
+}
+
+.watermark {
+    position: fixed;
+    top: 25px;
+    left: 10px;
+    opacity: 0.5;
+    z-index: 30;
+}
+
+.watermark img {
+    width: 100px;
+    height: auto;
+}
+
+
+/* Video Display Section */
+.video-display {
+    flex: 1;
+    display: flex;
+    position: relative;
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Stranger Video */
+.stranger-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: url('../assets/static.png') center center / cover no-repeat;
+    background-color: #000;
+}
+
+/* User Video */
+.user-video {
+    position: fixed;
+    bottom: 0%;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    object-fit: cover;
+    background-color: #000;
+    z-index: 5;
+}
+
+/* Controls Container */
+.video-controls {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Next Video Button */
+.next-video-btn {
+    background-color: #4a76a8;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 0.9;
+}
+
+.next-video-btn:hover {
+    background-color: #3b5c7e;
+    opacity: 1;
+}
+
+/* Confirmation Skip Button */
+.confirm-skip-btn {
+    background-color: #d9534f;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 0.9;
+}
+
+.confirm-skip-btn:hover {
+    background-color: #c9302c;
+}
+
+.report-btn {
+    background-color: #FF0000;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 0.9;
+}
+
+.report-btn:hover {
+    color: #ee4b2b;
+}
+
+/* Notification Dot on Chat Button */
+.notification-dot {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 15px;
+    height: 15px;
+    background-color: #ee4b2b;
+    border-radius: 50%;
+    display: none;
+    z-index: 5;
+    animation: pulse 1.5s infinite;
+    transform-origin: center;
+}
+
+/* Chat Toggle Button (Mobile Only) */
+.chat-toggle-btn {
+    position: relative;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 0.9;
+    display: none;
+}
+
+.chat-toggle-btn:hover {
+    background-color: #3b5c7e;
+    opacity: 1;
+}
+
+/* Chatbox Styles (Desktop) */
+.chat-box {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 300px;
+    max-height: 50%;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 8px;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    z-index: 10;
+    transition: height 0.3s ease;
+}
+
+.chat-box.desktop-visible {
+    display: flex;
+}
+
+.chat-box.collapsed .chat-messages {
+    display: none;
+}
+
+.chat-box.collapsed {
+    height: auto;
+}
+
+.close-chat-btn {
+    display: none;
+}
+
+/* Toggle Chat Size Button for Desktop */
+.toggle-chat-size-btn {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 11;
+}
+
+/* Chat Messages */
+.chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background-color: #5a5a5a;
+    border-radius: 4px;
+}
+
+.chat-message {
+    max-width: 70%;
+    word-wrap: break-word;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 5px 0;
+    transition: transform 0.3s ease;
+}
+
+/* User's Messages */
+.chat-message.you {
+    background-color: #daf8e3;
+    color: #000000;
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+    animation: slideInRight 0.3s forwards ease-out;
+}
+
+/* Stranger's Messages */
+.chat-message.stranger {
+    background-color: #f1f0f0;
+    color: #000000;
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+    animation: slideInLeft 0.3s forwards ease-out;
+}
+
+/* Chat Input Area */
+.chat-input-area {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.chat-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+}
+
+.chat-input::placeholder {
+    color: #ccc;
+}
+
+.send-chat-btn {
+    padding: 10px;
+    background-color: #4a76a8;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.send-chat-btn:hover {
+    background-color: #3b5c7e;
+}
+
+/* Chat Modal Styles (Mobile) */
+.chat-modal {
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    max-height: 40%;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    font-size: 16px;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 20;
+    backdrop-filter: blur(5px);
+    color: #fff;
+}
+
+/* Show chat modal */
+.chat-modal.show {
+    display: flex;
+}
+
+/* Close Button for Mobile Modal */
+.close-chat-modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 21;
+}
+
+/* Adjust chat messages area for modal */
+.chat-modal .chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    margin-top: 50px;
+}
+
+/* Adjust input area in modal */
+.chat-modal .chat-input-area {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.chat-modal .chat-input {
+    color: #fff;
+}
+
+.chat-modal .chat-input::placeholder {
+    color: #ccc;
+}
+
+.chat-modal .send-chat-btn {
+    background-color: #4a76a8;
+    color: #fff;
+}
+
+.chat-modal .send-chat-btn:hover {
+    background-color: #3b5c7e;
+}
+
+/* Spinner Overlay */
+.spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 30;
+}
+
+.spinner {
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    border-top: 6px solid #ffffff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+.next-video-btn:disabled,
+.send-chat-btn:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.send-chat-btn:hover:not(:disabled) {
+    background-color: #3b5c7e;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .video-display {
+        flex-direction: column;
+    }
+
+    .user-video {
+        bottom: 3%;
+    }
+
+    /* Hide original chat box */
+    .chat-box {
+        display: none;
+    }
+
+    .chat-toggle-btn {
+        display: inline-block;
+    }
+
+    .close-chat-modal-btn {
+        display: block;
+    }
+    
+    .chat-input,
+    .modal-chat-input,
+    input,
+    textarea,
+    select,
+    button {
+        font-size: 16px;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+    .video-display {
+        flex-direction: row;
+    }
+
+    .stranger-video,
+    .user-video {
+        position: static;
+        width: 50%;
+        height: 100%;
+    }
+
+    .user-video {
+        border: none;
+        border-radius: 0;
+    }
+
+    .chat-toggle-btn {
+        display: none;
+    }
+
+    .close-chat-btn {
+        display: none;
+    }
+
+    .chat-messages {
+        margin-top: 40px;
+    }
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

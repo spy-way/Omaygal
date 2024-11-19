@@ -1,0 +1,94 @@
+(node:1704724) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1704724) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+ValidationError: The 'X-Forwarded-For' header is set but the Express 'trust proxy' setting is false (default). This could indicate a misconfiguration which would prevent express-rate-limit from accurately identifying users. See https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/ for more information.
+    at _Validations.<anonymous> (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:180:15)
+    at _Validations.wrap (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:313:18)
+    at _Validations.xForwardedForHeader (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:178:10)
+    at Object.keyGenerator (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:542:19)
+    at /home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:595:32
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:576:5 {
+  code: 'ERR_ERL_UNEXPECTED_X_FORWARDED_FOR',
+  help: 'https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/'
+}
+(node:1705625) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1705625) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+ValidationError: The 'X-Forwarded-For' header is set but the Express 'trust proxy' setting is false (default). This could indicate a misconfiguration which would prevent express-rate-limit from accurately identifying users. See https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/ for more information.
+    at _Validations.<anonymous> (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:180:15)
+    at _Validations.wrap (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:313:18)
+    at _Validations.xForwardedForHeader (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:178:10)
+    at Object.keyGenerator (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:542:19)
+    at /home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:595:32
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:576:5 {
+  code: 'ERR_ERL_UNEXPECTED_X_FORWARDED_FOR',
+  help: 'https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/'
+}
+Error: The CORS policy for this site does not allow access from the specified Origin: null
+    at origin (/home/cheesjrm/public_html/app/server.js:58:33)
+    at /home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/cors/lib/index.js:204:7)
+    at Layer.handle [as handle_request] (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express/lib/router/index.js:328:13)
+    at /home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express/lib/router/index.js:280:10)
+    at logger (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/morgan/index.js:144:5)
+ValidationError: The 'X-Forwarded-For' header is set but the Express 'trust proxy' setting is false (default). This could indicate a misconfiguration which would prevent express-rate-limit from accurately identifying users. See https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/ for more information.
+    at _Validations.<anonymous> (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:180:15)
+    at _Validations.wrap (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:313:18)
+    at _Validations.xForwardedForHeader (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:178:10)
+    at Object.keyGenerator (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:542:19)
+    at /home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:595:32
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:576:5 {
+  code: 'ERR_ERL_UNEXPECTED_X_FORWARDED_FOR',
+  help: 'https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/'
+}
+ValidationError: The 'X-Forwarded-For' header is set but the Express 'trust proxy' setting is false (default). This could indicate a misconfiguration which would prevent express-rate-limit from accurately identifying users. See https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/ for more information.
+    at _Validations.<anonymous> (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:180:15)
+    at _Validations.wrap (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:313:18)
+    at _Validations.xForwardedForHeader (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:178:10)
+    at Object.keyGenerator (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:542:19)
+    at /home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:595:32
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:576:5 {
+  code: 'ERR_ERL_UNEXPECTED_X_FORWARDED_FOR',
+  help: 'https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/'
+}
+ValidationError: The 'X-Forwarded-For' header is set but the Express 'trust proxy' setting is false (default). This could indicate a misconfiguration which would prevent express-rate-limit from accurately identifying users. See https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/ for more information.
+    at _Validations.<anonymous> (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:180:15)
+    at _Validations.wrap (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:313:18)
+    at _Validations.xForwardedForHeader (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:178:10)
+    at Object.keyGenerator (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:542:19)
+    at /home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:595:32
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:576:5 {
+  code: 'ERR_ERL_UNEXPECTED_X_FORWARDED_FOR',
+  help: 'https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/'
+}
+ValidationError: The 'X-Forwarded-For' header is set but the Express 'trust proxy' setting is false (default). This could indicate a misconfiguration which would prevent express-rate-limit from accurately identifying users. See https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/ for more information.
+    at _Validations.<anonymous> (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:180:15)
+    at _Validations.wrap (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:313:18)
+    at _Validations.xForwardedForHeader (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:178:10)
+    at Object.keyGenerator (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:542:19)
+    at /home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:595:32
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:576:5 {
+  code: 'ERR_ERL_UNEXPECTED_X_FORWARDED_FOR',
+  help: 'https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/'
+}
+ValidationError: The 'X-Forwarded-For' header is set but the Express 'trust proxy' setting is false (default). This could indicate a misconfiguration which would prevent express-rate-limit from accurately identifying users. See https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/ for more information.
+    at _Validations.<anonymous> (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:180:15)
+    at _Validations.wrap (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:313:18)
+    at _Validations.xForwardedForHeader (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:178:10)
+    at Object.keyGenerator (/home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:542:19)
+    at /home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:595:32
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/cheesjrm/nodevenv/public_html/app/18/lib/node_modules/express-rate-limit/dist/index.cjs:576:5 {
+  code: 'ERR_ERL_UNEXPECTED_X_FORWARDED_FOR',
+  help: 'https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/'
+}
