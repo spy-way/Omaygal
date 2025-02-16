@@ -22,7 +22,7 @@ const server = http.createServer(app);
 // Initialize Socket.IO before routes that use it
 const io = new Server(server, {
     cors: {
-        origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+        origin: process.env.CORS_ORIGIN || 'https://omaygal-8f3s.vercel.app',
         methods: ['GET', 'POST'],
         credentials: true,
     },
