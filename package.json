@@ -1,6 +1,6 @@
 {
   "name": "cheevo",
-  "version": "1.0.0",
+  "version": "2",
   "description": "Connect with strangers through chat and video.",
   "main": "server.js",
   "scripts": {
