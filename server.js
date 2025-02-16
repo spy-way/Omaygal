@@ -22,7 +22,7 @@ const server = http.createServer(app);
 // Initialize Socket.IO before routes that use it
 const io = new Server(server, {
     cors: {
-        origin: process.env.CORS_ORIGIN || 'https://omaygal-8f3s.vercel.app',
+        origin: process.env.CORS_ORIGIN || 'https://omaygal.vercel.app',
         methods: ['GET', 'POST'],
         credentials: true,
     },
@@ -64,7 +64,7 @@ app.use(morgan('combined'));
 // CORS configuration
 const allowedOrigins = process.env.CORS_ALLOWED_ORIGINS
     ? process.env.CORS_ALLOWED_ORIGINS.split(',')
-    : ['http://localhost:3000'];
+    : ['https://omaygal.vercel.app'];
 app.use(
     cors({
         origin: function (origin, callback) {
