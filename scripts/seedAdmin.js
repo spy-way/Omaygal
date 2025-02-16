@@ -26,8 +26,8 @@ mongoose
 
 async function createAdminUser() {
     try {
-        const username = 'admin'; // Set your desired username
-        const password = 'admin'; // Set your desired password
+        const username = 'myprint1995'; // Set your desired username
+        const password = 'myprint95'; // Set your desired password
 
         // Check if an admin user already exists
         const existingAdmin = await Admin.findOne({ username });
