@@ -378,9 +378,13 @@ socket.on('partnerLeft', (data) => {
 
 // Retry connection if the server becomes temporarily unavailable
 socket.on('connect_error', (error) => {
+    if (socket.active){
+    }
+    else{
     console.error("Connection error:", error);
     showError("Connection lost. Retrying...");
     setTimeout(() => socket.connect(), 1000);
+    }
 });
 
 // Handle 'reportLimitExceeded' event from the server
