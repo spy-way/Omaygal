@@ -13,12 +13,22 @@ if (!mongoURI) {
 }
 
 // Connect to MongoDB
-mongoose
-    .connect(mongoURI)
-    .then(() => {
-        console.log('MongoDB connected successfully.');
-        return createAdminUser();
-    })
+// mongoose
+//     .connect(mongoURI)
+//     .then(() => {
+//         console.log('MongoDB connected successfully.');
+//         return createAdminUser();
+//     })
+
+    mongoose.connect(mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+.then(() => {
+    console.log('Connected to MongoDB');
+    return createAdminUser();
+})
+    
     .catch((err) => {
         console.error('MongoDB connection error:', err);
         process.exit(1);
