@@ -3,6 +3,7 @@
 const BannedIP = require('../models/BannedIP');
 
 async function ipBlocker(req, res, next) {
+  app.set("trust proxy", true);
   //  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   var ip = req.ip; 
    
